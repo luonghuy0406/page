@@ -3,7 +3,9 @@
   <link rel="stylesheet" href="./styles.css">
   <script>
     window.addEventListener('message', function(e) {
-    	console.log("e",e)
+    	if(e.data){
+        document.getElementsByTagName('html')[0].style.color = e.data;
+      }
     });
 
   </script>
