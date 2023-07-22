@@ -3,12 +3,7 @@
   <link rel="stylesheet" href="./styles.css">
   <script>
     window.addEventListener('message', function(event) {
-            if(event.data){
-                let data = JSON.parse(event.data)
-                if(data.type == "preview"){
-                    console.log(">>>>>>>>",data)
-                }
-            }
+            console.log(">>>>>>>>",data)
         });
   </script>
 </head>
