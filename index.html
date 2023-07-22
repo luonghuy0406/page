@@ -1,6 +1,16 @@
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./styles.css">
+  <script>
+    window.addEventListener('message', function(event) {
+            if(event.data){
+                let data = JSON.parse(event.data)
+                if(data.type == "preview"){
+                    console.log(">>>>>>>>",data)
+                }
+            }
+        });
+  </script>
 </head>
 <body>
   <!-- Forked from a template on Tutorialzine: https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox -->
