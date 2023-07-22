@@ -4,7 +4,8 @@
   <script>
     window.addEventListener('message', function(e) {
     	if(e.data){
-        document.getElementsByTagName('html')[0].style.color = e.data;
+        document.getElementsByTagName('html')[0].style.color = e.data.color;
+        document.getElementsByTagName('html')[0].style['font-size'] = e.data.fontSize;
       }
     });
 
