@@ -19,17 +19,15 @@
   fetch('https://demo1704728.mockable.io/css')
     .then(response => response.text())
     .then(data => {
-        console.log(JSON.parse(data))
-      // Apply the fetched CSS to the website
-        data = JSON.parse(data)
+      data = JSON.parse(data)
       const styleElement = document.createElement('style');
       styleElement.innerHTML = `
-      html{
-          background:${data.html['backgroundColor']};
-          color:${data.html['color']};
-          font-family:`${${data.html['font-family']}}, sans-serif`;
-          font-size:${data.html['fontSize']};
-      }
+          html{
+              background:${data.html['backgroundColor']};
+              color:${data.html['color']};
+              font-family:`${data.html['font-family']}, sans-serif`;
+              font-size:${data.html['fontSize']};
+          }
       `;
       document.head.appendChild(styleElement);
     })
