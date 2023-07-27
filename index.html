@@ -6,6 +6,14 @@
     	if(e.data){
         document.getElementsByTagName('html')[0].style.color = e.data.color;
         document.getElementsByTagName('html')[0].style['font-size'] = e.data.fontSize;
+        document.getElementsByTagName('html')[0].style[background-color] = e.data.backgroundColor;
+        document.getElementsByTagName('html')[0].style['font-family'] = `${e.data.fontFamily}, sans-serif`;
+        WebFont.load({
+            google: {
+            families: [e.data.fontFamily]
+            }
+        })
+
       }
     });
   fetch('https://demo1704728.mockable.io/css')
@@ -17,10 +25,10 @@
       const styleElement = document.createElement('style');
       styleElement.innerHTML = `
       html{
-          background:${data.html['background']};
-        color:${data.html['color']};
-        font-family:${data.html['font-family']};
-        font-size:${data.html['font-size']};
+          background:${data.html['backgroundColor']};
+          color:${data.html['color']};
+          font-family:`${${data.html['font-family']}}, sans-serif`;
+          font-size:${data.html['fontSize']};
       }
       `;
       document.head.appendChild(styleElement);
@@ -29,6 +37,7 @@
       console.error('Error fetching CSS:', error);
     });
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Forked from a template on Tutorialzine: https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox -->
