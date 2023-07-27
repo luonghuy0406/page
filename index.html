@@ -8,7 +8,26 @@
         document.getElementsByTagName('html')[0].style['font-size'] = e.data.fontSize;
       }
     });
-
+  fetch('https://demo1704728.mockable.io/css')
+    .then(response => response.text())
+    .then(data => {
+        console.log(JSON.parse(data))
+      // Apply the fetched CSS to the website
+        data = JSON.parse(data)
+      const styleElement = document.createElement('style');
+      styleElement.innerHTML = `
+      html{
+          background:${data.html['background']};
+        color:${data.html['color']};
+        font-family:${data.html['font-family']};
+        font-size:${data.html['font-size']};
+      }
+      `;
+      document.head.appendChild(styleElement);
+    })
+    .catch(error => {
+      console.error('Error fetching CSS:', error);
+    });
   </script>
 </head>
 <body>
