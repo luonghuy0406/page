@@ -33,20 +33,17 @@
 
 
 window.addEventListener('message', function(event) {
-    console.log(event.data)
-    // if(event.data){
-    //     let data = JSON.parse(event.data)
-    //     if(data.type == "preview"){
-    //         setConfigToCss(data)
-    //         if(preThemeConfig['font_family']['value'] != data.value['font_family']['value']){
-    //             WebFont.load({
-    //             google: {
-    //             families: [data.value['font_family']['value']]
-    //             }
-    //         });
-    //         }
-    //     }
-    // }
+    if(event.data){
+        let data = JSON.parse(event.data)
+        if(data.type == "preview"){
+            setConfigToCss(data.value)
+            WebFont.load({
+                google: {
+                families: [data.value['font_family']]
+                }
+            }
+        }
+    }
 });
 // setConfigToCss(preThemeConfigreFormSettings)
 // if(preThemeConfig['font_family']){
@@ -70,13 +67,13 @@ function hexToRgbA(hex, opacity){
     throw new Error('Bad Hex');
 }
 
-function setConfigToCss(preThemeConfig){
+function setConfigToCss(data){
     
 
     let r = document.querySelector(':root');
     
-    for (const [key, value] of Object.entries(preThemeConfig)) {
-        let valueTheme = value['value']
+    for (const [key, value] of Object.entries(data)) {
+        let valueTheme = value
         if(!valueTheme)
             continue
         switch (key) {
