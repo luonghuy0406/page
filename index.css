@@ -1,0 +1,24 @@
+
+:root{
+	--background-image : "";
+	--color-brightness: 255;
+	--background-image-brightness: 0;
+	--font-size : 16px;
+	--background-color: #FFFFFF;
+	--font-family : 'Nunito', sans-serif;
+	--color : #000000;
+}
+
+body {
+	overflow: auto;
+}
+
+html{
+    background-image: linear-gradient(rgba(var(--color-brightness),var(--color-brightness),var(--color-brightness),var(--background-image-brightness)), rgba(var(--color-brightness),var(--color-brightness),var(--color-brightness),var(--background-image-brightness))), var(--background-image);
+	background-position: center top;
+	background-size: cover;
+	background-color: var(--background-color);
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	color: var(--color);
+}
