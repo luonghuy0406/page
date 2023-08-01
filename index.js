@@ -33,21 +33,22 @@
 
 
 window.addEventListener('message', function(event) {
-    if(event.data){
-        let data = JSON.parse(event.data)
-        if(data.type == "preview"){
-            setConfigToCss(data)
-            if(preThemeConfig['font_family']['value'] != data.value['font_family']['value']){
-                WebFont.load({
-                google: {
-                families: [data.value['font_family']['value']]
-                }
-            });
-            }
-        }
-    }
+    console.log(event.data)
+    // if(event.data){
+    //     let data = JSON.parse(event.data)
+    //     if(data.type == "preview"){
+    //         setConfigToCss(data)
+    //         if(preThemeConfig['font_family']['value'] != data.value['font_family']['value']){
+    //             WebFont.load({
+    //             google: {
+    //             families: [data.value['font_family']['value']]
+    //             }
+    //         });
+    //         }
+    //     }
+    // }
 });
-setConfigToCss(preThemeConfigreFormSettings)
+// setConfigToCss(preThemeConfigreFormSettings)
 // if(preThemeConfig['font_family']){
 //         WebFont.load({
 //         google: {
