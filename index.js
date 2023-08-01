@@ -41,7 +41,7 @@ window.addEventListener('message', function(event) {
                 google: {
                 families: [data.value['font_family']]
                 }
-            }
+            })
         }
     }
 });
