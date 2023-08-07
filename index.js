@@ -1,17 +1,3 @@
-// window.addEventListener('message', function(e) {
-//     if(e.data){
-//     document.getElementsByTagName('html')[0].style.color = e.data.color;
-//     document.getElementsByTagName('html')[0].style['font-size'] = e.data.fontSize;
-//     document.getElementsByTagName('html')[0].style['background-color'] = e.data.backgroundColor;
-//     document.getElementsByTagName('html')[0].style['font-family'] = `${e.data.fontFamily}, sans-serif`;
-//     WebFont.load({
-//         google: {
-//         families: [e.data.fontFamily]
-//         }
-//     })
-
-//   }
-// });
 // fetch('https://demo1704728.mockable.io/css')
 // .then(response => response.text())
 // .then(data => {
@@ -30,7 +16,14 @@
 // .catch(error => {
 //   console.error('Error fetching CSS:', error);
 // });
-
+// setConfigToCss(preThemeConfigreFormSettings)
+// if(preThemeConfig['font_family']){
+//         WebFont.load({
+//         google: {
+//         families: [preThemeConfig['font_family']['value']]
+//         }
+//     });
+// }
 
 window.addEventListener('message', function(event) {
     if(event.data){
@@ -45,14 +38,7 @@ window.addEventListener('message', function(event) {
         }
     }
 });
-// setConfigToCss(preThemeConfigreFormSettings)
-// if(preThemeConfig['font_family']){
-//         WebFont.load({
-//         google: {
-//         families: [preThemeConfig['font_family']['value']]
-//         }
-//     });
-// }
+
 
 function hexToRgbA(hex, opacity){
     var c;
