@@ -22,7 +22,7 @@ function parse_query_string(query) {
 }
 
 var qs = parse_query_string(query);
-if(qs.hasOwnProperty('id_css'){
+if(qs.hasOwnProperty('id_css')){
     fetch('https://demo1704728.mockable.io/'+qs['id_css'])
     .then(response => response.text())
     .then(data => {
