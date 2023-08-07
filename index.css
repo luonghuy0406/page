@@ -14,11 +14,11 @@ body {
 }
 
 html{
-    background-image: linear-gradient(rgba(var(--color-brightness),var(--color-brightness),var(--color-brightness),var(--background-image-brightness)), rgba(var(--color-brightness),var(--color-brightness),var(--color-brightness),var(--background-image-brightness))), var(--background-image);
-	background-position: center top;
-	background-size: cover;
-	background-color: var(--background-color);
-	font-family: var(--font-family);
-	font-size: var(--font-size);
+    	background-image: linear-gradient(rgba(var(--color-brightness),var(--color-brightness),var(--color-brightness),var(--background-image-brightness)), rgba(var(--color-brightness),var(--color-brightness),var(--color-brightness),var(--background-image-brightness))), var(--background-image) !important;
+	background-position: center top  !important;
+	background-size: cover  !important;
+	background-color: var(--background-color)  !important;
+	font-family: var(--font-family)  !important;
+	font-size: var(--font-size)  !important;
 	color: var(--color);
 }
