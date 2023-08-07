@@ -1,30 +1,44 @@
+var query = window.location.search.substring(1);
+function parse_query_string(query) {
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair.shift());
+    var value = decodeURIComponent(pair.join("="));
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = value;
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], value];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(value);
+    }
+  }
+  return query_string;
+}
 
-// fetch('https://demo1704728.mockable.io/css')
-// .then(response => response.text())
-// .then(data => {
-//   data = JSON.parse(data)
-//   const styleElement = document.createElement('style');
-//   styleElement.innerHTML = `
-//       html{
-//           background:${data.html['backgroundColor']};
-//           color:${data.html['color']};
-//           font-family:${data.html['font-family']}, sans-serif;
-//           font-size:${data.html['fontSize']};
-//       }
-//   `;
-//   document.head.appendChild(styleElement);
-// })
-// .catch(error => {
-//   console.error('Error fetching CSS:', error);
-// });
-// setConfigToCss(preThemeConfigreFormSettings)
-// if(preThemeConfig['font_family']){
-//         WebFont.load({
-//         google: {
-//         families: [preThemeConfig['font_family']['value']]
-//         }
-//     });
-// }
+var qs = parse_query_string(query);
+if(qs.hasOwnProperty('id_css'){
+    fetch('https://demo1704728.mockable.io/'+qs['id_css'])
+    .then(response => response.text())
+    .then(data => {
+      data = JSON.parse(data)
+      setConfigToCss(data)
+        WebFont.load({
+            google: {
+            families: [data['font_family']]
+            }
+        })
+    })
+    .catch(error => {
+      console.error('Error fetching CSS:', error);
+    });
+}
+
 
 window.addEventListener('message', function(event) {
     if(event.data){
