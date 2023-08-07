@@ -1,3 +1,4 @@
+import { WebFont } from 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
 // fetch('https://demo1704728.mockable.io/css')
 // .then(response => response.text())
 // .then(data => {
