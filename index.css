@@ -21,4 +21,5 @@ html{
 	font-family: var(--font-family)  !important;
 	font-size: var(--font-size)  !important;
 	color: var(--color);
+	height: 100%;
 }
