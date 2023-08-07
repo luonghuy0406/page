@@ -1,4 +1,3 @@
-import { WebFont } from 'https://unpkg.com/webfont@1.6.26/dist/webfont.js';
 
 // fetch('https://demo1704728.mockable.io/css')
 // .then(response => response.text())
